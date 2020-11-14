@@ -1,5 +1,5 @@
-const config = require('./src/config');
-const theme = require('./src/styles/Theme')
+const config = require("./src/config")
+const theme = require("./src/styles/Theme")
 
 module.exports = {
   siteMetadata: {
@@ -8,7 +8,9 @@ module.exports = {
     author: config.author,
     siteUrl: config.siteUrl,
   },
+
   plugins: [
+    "gatsby-theme-elements",
     `gatsby-plugin-react-helmet`,
     `gatsby-plugin-sitemap`,
     `gatsby-plugin-robots-txt`,

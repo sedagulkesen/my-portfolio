@@ -1,13 +1,10 @@
 import React, { useRef } from "react"
 import PropTypes from "prop-types"
 import styled from "styled-components"
-import Img from "gatsby-image"
-import { MDXRenderer } from "gatsby-plugin-mdx"
 import { motion } from "framer-motion"
 
 import { useOnScreen } from "../../hooks"
 import ContentWrapper from "../../styles/ContentWrapper"
-import Underlining from "../../styles/Underlining"
 import Social from "../social"
 
 const StyledSection = styled(motion.section)`
