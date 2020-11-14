@@ -20,10 +20,6 @@ module.exports = {
       name: "Linkedin",
       url: "https://www.linkedin.com/in/seda-gulkesen/",
     },
-    // {
-    //   name: "Medium",
-    //   url: "https://medium.com/@konstantin.muenster",
-    // },
     {
       name: "Github",
       url: "https://github.com/sedagulkesen",
@@ -38,7 +34,7 @@ module.exports = {
     menu: [
       {
         name: "About Me",
-        url: "/#about",
+        url: "/#aboutme",
       },
       {
         name: "Projects",

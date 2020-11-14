@@ -14,7 +14,8 @@ import Navbar from "./navbar"
 const StyledHeader = motion.custom(styled.header`
   width: 100%;
   height: ${({ theme }) => theme.headerHeight};
-  background: ${({ theme }) => theme.colors.background};
+  background: black;
+  sticky: true;
 `)
 
 const StyledContentWrapper = styled(ContentWrapper)`
@@ -24,6 +25,8 @@ const StyledContentWrapper = styled(ContentWrapper)`
     display: flex;
     justify-content: space-between;
     align-items: center;
+    background: black;
+    padding-right: 2em;
   }
 `
 
@@ -51,7 +54,7 @@ const StyledBurger = styled.button`
   div {
     width: 2rem;
     height: 0.25rem;
-    background: ${({ theme }) => theme.colors.primary};
+    background: black;
     border-radius: 0.625rem;
     transition: all 0.3s ease-in-out;
     position: relative;
@@ -77,7 +80,6 @@ const Header = () => {
   const [open, setOpen] = useState(false)
   const [windowWidth, setWindowWidth] = useState(0)
 
-  
   useEffect(() => {
     let handleWindowSizeChange
     // if (isSSR) is necessary to prevent error during the gatsby build
@@ -94,9 +96,9 @@ const Header = () => {
   // Required for animation - start after the splashScreen sequence is done
   const controls = useAnimation()
   useEffect(() => {
-    if (isIntroDone) controls.start({ opacity: 1, y: 0, transition: { delay: 0.2 } })
+    if (isIntroDone)
+      controls.start({ opacity: 1, y: 0, transition: { delay: 0.2 } })
   }, [isIntroDone, controls])
-  
 
   let navigation
   if (detectMobileAndTablet(windowWidth)) {
@@ -119,12 +121,16 @@ const Header = () => {
   }
 
   return (
-    <StyledHeader initial={{ opacity: 0, y: -10 }} animate={controls}>
+    <StyledHeader
+      initial={{ opacity: 0, y: -10 }}
+      animate={controls}
+      style={{ sticky: true }}
+    >
       {/* add blur class to body when sidebar is opened */}
       <Helmet bodyAttributes={{ class: open ? "blur" : "" }} />
       <StyledContentWrapper>
         <Link to="/" aria-label="home">
-          <Logo color="primary" size="2rem" />
+          <Logo color="white" size="2rem" />
         </Link>
         {navigation}
       </StyledContentWrapper>

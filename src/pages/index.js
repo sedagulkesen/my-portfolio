@@ -4,8 +4,6 @@ import { graphql } from "gatsby"
 
 import Layout from "../components/layout"
 import SEO from "../components/seo"
-import Hero from "../components/sections/hero"
-import Articles from "../components/sections/articles"
 import About from "../components/sections/about"
 import Interests from "../components/sections/interests"
 import Projects from "../components/sections/projects"
@@ -14,10 +12,7 @@ import { splashScreen } from "../config"
 
 const IndexPage = ({ data }) => (
   <Layout splashScreen={splashScreen}>
-    <SEO title="Seda Gulkesen -Portfolio" />
-    <Hero content={data.hero.edges} />
-    {/* Articles is populated via Medium RSS Feed fetch */}
-    {/* <Articles /> */}
+    <SEO title="Seda Gulkesen-Portfolio" />
     <About content={data.about.edges} />
     {/* <Interests content={data.interests.edges} /> */}
     <Projects content={data.projects.edges} />
@@ -33,26 +28,6 @@ export default IndexPage
 
 export const pageQuery = graphql`
   {
-    hero: allMdx(filter: { fileAbsolutePath: { regex: "/hero/" } }) {
-      edges {
-        node {
-          body
-          frontmatter {
-            greetings
-            title
-            subtitlePrefix
-            subtitle
-            icon {
-              childImageSharp {
-                fluid(maxWidth: 60, quality: 90) {
-                  ...GatsbyImageSharpFluid
-                }
-              }
-            }
-          }
-        }
-      }
-    }
     about: allMdx(filter: { fileAbsolutePath: { regex: "/about/" } }) {
       edges {
         node {

@@ -106,30 +106,9 @@ const Hero = ({ content }) => {
       <StyledContentWrapper>
         <motion.div initial={{ opacity: 0, y: 20 }} animate={gControls}>
           <h1 className="title">
-            <div className="greetings">
-              {frontmatter.greetings}
-              {/* <motion.div
-                animate={eControls}
-                style={{ originX: 0.7, originY: 0.7 }}
-              >
-                <Img
-                  className="emoji"
-                  fluid={frontmatter.icon.childImageSharp.fluid}
-                />
-              </motion.div> */}
-            </div>
+            <div className="greetings">{frontmatter.greetings}</div>
             {frontmatter.title}
           </h1>
-          <h2 className="subtitle">
-            {frontmatter.subtitlePrefix}{" "}
-            {/* Hover state color can be set in useEffect hook */}
-            <AnimatedUnderlining animate={uControls} color="tertiary" big>
-              {frontmatter.subtitle}
-            </AnimatedUnderlining>
-          </h2>
-          <div className="description">
-            <MDXRenderer>{body}</MDXRenderer>
-          </div>
         </motion.div>
         <motion.div initial={{ opacity: 0, x: 20 }} animate={sControls}>
           <Social fontSize=".95rem" padding=".3rem 1.25rem" width="auto" />
