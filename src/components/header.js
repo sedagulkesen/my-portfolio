@@ -15,7 +15,6 @@ const StyledHeader = motion.custom(styled.header`
   width: 100%;
   height: ${({ theme }) => theme.headerHeight};
   background: black;
-  sticky: true;
 `)
 
 const StyledContentWrapper = styled(ContentWrapper)`
@@ -26,7 +25,6 @@ const StyledContentWrapper = styled(ContentWrapper)`
     justify-content: space-between;
     align-items: center;
     background: black;
-    padding-right: 2em;
   }
 `
 
@@ -121,11 +119,7 @@ const Header = () => {
   }
 
   return (
-    <StyledHeader
-      initial={{ opacity: 0, y: -10 }}
-      animate={controls}
-      style={{ sticky: true }}
-    >
+    <StyledHeader initial={{ opacity: 0, y: -10 }} animate={controls}>
       {/* add blur class to body when sidebar is opened */}
       <Helmet bodyAttributes={{ class: open ? "blur" : "" }} />
       <StyledContentWrapper>
