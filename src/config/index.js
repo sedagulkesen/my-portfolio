@@ -1,7 +1,7 @@
 module.exports = {
   author: "@konstantinmuenster",
   siteTitle: "Gatsby Starter Portfolio Minimal",
-  siteShortTitle: "SEDA GULKESEN.", // Used as logo text in header, footer, and splash screen
+  siteShortTitle: "SEDA GULKESEN.", // Used as logo text in header, and splash screen
   siteDescription:
     "A modern one-page portfolio with a clean yet expressive design.",
   siteUrl: "https://gatsby-starter-portfolio-minimal.netlify.app/",
@@ -46,15 +46,4 @@ module.exports = {
       url: "/#contact",
     },
   },
-
-  footerLinks: [
-    {
-      name: "Privacy",
-      url: "/privacy",
-    },
-    {
-      name: "Imprint",
-      url: "/imprint",
-    },
-  ],
 }
